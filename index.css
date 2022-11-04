@@ -1,0 +1,355 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+.main-container{
+    background-color: #EEEEEE;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+.task-ongoing{
+    width: 50%;
+    height: 100%;
+    background-color: #06283D;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.timer{
+    font-size: 2em;
+    color: #EEEEEE;
+    letter-spacing: .2em;
+    margin-bottom: 5em;
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1em;
+    font-weight: bold;
+}
+.start{
+    background-color: #38E54D;
+    width: 10vw;
+    height: 5vh;
+    border: none;
+    border-radius: .5em;
+    cursor: pointer;
+    font-weight: bold;
+}
+.stop{
+    background-color: #31C6D4;
+    width: 10vw;
+    height: 5vh;
+    border: none;
+    border-radius: .5em;
+    cursor: pointer;
+    font-weight: bold;
+}
+.cancel{
+    background-color: #F96666;
+    width: 10vw;
+    height: 5vh;
+    border: none;
+    border-radius: .5em;
+    color: #EEEEEE;
+    font-weight: bold;
+    cursor: pointer;
+}
+.complete{
+    background-color: #2192FF;
+    color: #EEEEEE;
+    width: 10vw;
+    height: 5vh;
+    border: none;
+    border-radius: .5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.clear-all{
+    background-color: #F96666;
+    color: #EEEEEE;
+    font-size: 1.2em;
+    width: 30vw;
+    height: 5vh;
+    border-radius: .5em;
+    border:none;
+    cursor: pointer;
+    margin-top: 10em;
+    font-weight: bold;
+}
+.ongoing{
+    color: #EEEEEE;
+    margin-bottom: 1em;
+}
+
+/* input */
+.task-setting{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.task-setting-title{
+    width: 100%;
+    height: 5%;
+    font-size: 2em;
+    color: #06283D;
+    font-weight: bold;
+    text-align: center;
+}
+.task-input-container{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+}
+.input-task-setting{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.task-input-field{
+    padding: 1em;
+    width: 30vw;
+    border: none;
+    margin-top: 1em;
+    border-radius: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.radio-input{
+    margin-top: 1em;
+    line-height: 2em;
+    width: 30vw;
+    border-radius: .5em;
+    background-color: #06283D;
+    color: #FFFFFF;
+    font-weight: 800;
+    padding-left: 1em;
+}
+.datetime-setting{
+    display:flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+.datetime{
+    width: 30vw;
+    padding: 1em;
+    border:none;
+    border-radius: .5em;
+    margin-top: .5em;
+}
+.time-setting{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+.time-setting div {
+    display: flex;
+    justify-content: space-between;
+}
+.time-setting div div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+.timer-input{
+    width: 9vw;
+    margin-top: .5em;
+    border:none;
+    border-radius: .5em;
+    padding: 1em;
+}
+.add-btn{
+    width: 30vw;
+    border: none;
+    background-color: #06283D;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: .5em;
+    color: #EEEEEE;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.task-lists{
+    width: 80%;
+    height: 40%;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    border-radius: .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+.task-ul{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top: .5em;
+    align-items: center;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+}
+.task-ul::-webkit-scrollbar {
+    display: none;
+}
+.task-li{
+    width: 100%;
+    padding: 2em;
+    background-color:#EEEEEE;
+    border-radius: .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    line-height: 2em;
+    transition: .5s all linear;
+}
+.task-li:hover{
+    background-color: #2192FF;
+}
+.li-text{
+    padding-right: 1em;
+    color:#06283D;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+.task-li:hover .li-text{
+    color: #EEEEEE;
+}
+.do-btn{
+    width: 10vw;
+    height: 5vh;
+    background-color: #38E54D;
+    font-weight: bold;
+    border: none;
+    border-radius: .5em;
+    cursor: pointer;
+    font-size: 1em;
+    transition: .3s all linear;
+
+}
+.do-btn:hover{
+    background-color: #06283D;
+    color: #EEEEEE;
+}
+.do-btn::after{
+    content: 'Do task'
+}
+
+
+
+
+@media only screen and (max-width: 768px){
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        height: 200vh;
+        overflow-y: scroll;
+    }
+    .task-ongoing{
+        width: 100%;
+        height: 50%;
+    }
+    .timer{
+        font-size: 1em;
+        margin-bottom: 0em;
+        margin-top: 2em;
+    }
+    .buttons{
+        width: 100%;
+        height: 100%;
+    }
+    .start{
+        width: 15vw;
+    }
+    .stop{
+        width: 15vw;
+    }
+    .cancel{
+        width: 15vw;
+    }
+    .complete{
+        width: 20vw;
+    }
+    .clear-all{
+        font-size: 1em;
+        width: 50vw;
+        height: 10vh;
+        margin-top: 0m;
+        margin-bottom: 5em;
+    }
+    .ongoing{
+        color: #EEEEEE;
+        margin-bottom: 1em;
+    }
+    
+    /* input */
+    .task-setting{
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+    }
+    .task-setting-title{
+        width: 100%;
+        height: 5%;
+        font-size: 1em;
+    }
+    .task-input-container{
+        width: 100vw;
+        height: 50%;
+        font-size: 1em;
+    }
+    .input-task-setting{
+        width: 100%;
+        height: 80%;
+    }
+    .task-input-field{
+        width: 80vw;
+    }
+    .radio-input{
+        width: 100%;
+    }
+    .datetime{
+        width: 80vw;
+    }
+    .timer-input{
+        width: 20vw;
+    }
+    .add-btn{
+        width: 80vw;
+    }
+
+    .li-text{
+        font-size: .8em;
+    }
+    .do-btn{
+        width: 20vw;
+        font-size: .8em;
+    
+    }
+}

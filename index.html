@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <script src="addAction.js" defer></script>
+    <script src="fetchData.js" defer type="module"></script>
+    <script src="clearTask.js" defer></script>
+    <script src="doTask.js" defer type="module"></script>
+    <script src="action.js" defer></script>
+  </head>
+  <body class="main-container">
+
+    <audio controls class="audio-cancel" style="display: none" >
+      <source src="./audio/mixkit-video-game-bomb-alert-2803.wav" type="audio/ogg">
+    </audio>
+    <audio controls class="audio-complete" style="display: none" >
+      <source src="./audio/mixkit-fairy-message-notification-861.wav" type="audio/ogg">
+    </audio>
+    <audio controls class="audio-timer" style="display: none" >
+      <source src="./audio/mixkit-arcade-retro-run-sound-220.wav" type="audio/ogg">
+    </audio>
+    
+    <div class="task-ongoing">
+        <h1 class="ongoing"></h1>
+        <div class="timer">
+            Start the task to run the timer
+        </div>
+        <div class="buttons">
+            <button class="start" onclick="startTimer()">Start</button>
+            <button class="stop" onclick="stopTimer()">Stop</button>
+            <button class="cancel" onclick="cancelTask()">Cancel</button>
+            <button class="complete" onclick="completeTask()">Complete</button>
+        </div>
+        <button class="clear-all" onclick="clearStorage()">
+          Clear all tasks
+        </button>
+    </div>
+    <div class="task-setting">
+      <div class="task-setting-title">TODO LIST</div>
+      <form name="toDoForm" class="task-input-container" onsubmit="add()">
+        <div class="task-input-setting">
+
+            <label>Input your task</label>
+            <input name="task-name" type="text" placeholder="e.g coding" class="task-input-field" autocomplete="off"/>
+
+            <div class="radio-input">
+                <label>Task Types</label>
+                <div class="big-rock">
+                    <input type="radio" name="task-type" value="Big rock" checked>
+                    <label>Big Rock</label>
+                </div>
+                <div class="small-rock">
+                    <input type="radio" name="task-type" value="Small rock">
+                    <label>Small Rock</label>
+                </div>
+            </div>
+
+            <div class="datetime-setting">
+                <label>Create on</label>
+                <input type="datetime-local" name="created-on" class="datetime"/>
+            </div>
+
+            <div class="time-setting">
+                <label>Please set up your timer</label>
+                <div>
+                  <div>
+                    <label for="hour">Hours</label>
+                    <input type="number" name="hour" class="timer-input" value="0" max="24" min="0"/>
+                  </div>
+
+                  <div>
+                    <label for="minute">Minutes</label>
+                    <input type="number" name="minute" class="timer-input" value="0" max="60" min="0"/>
+
+                  </div>
+
+                  <div>
+                    <label for="second">Seconds</label>
+                    <input type="number" name="second" class="timer-input" value="0" max="60" min="0"/>
+
+                  </div>
+                </div>
+            </div>
+
+            <button type="submit" class="add-btn">Add Task</button>
+        </div>
+      </form>
+      <div class="task-lists">
+          <ul class="task-ul">
+          </ul>
+      </div>
+    </div>
+  </body>
+</html>
