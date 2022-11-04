@@ -42,6 +42,7 @@ const startTimer = () => {
 }
 
 const cancelTask = () => {
+    if(localStorage.getItem("Ongoing Task") === null) return
     const control = document.querySelector(".audio-cancel")
     control.autoplay = true;
     control.load();
@@ -54,8 +55,9 @@ const cancelTask = () => {
 
 const completeTask = () => {
 
+    if(localStorage.getItem("Ongoing Task") === null) return
     if(timeRemaining) clearInterval(myInterval);
-
+ 
     const completedTask = JSON.parse(localStorage.getItem("Completed")) || [];
     completedTask.push(ongoing);
     localStorage.setItem("Completed",JSON.stringify(completedTask));
