@@ -6,7 +6,7 @@ const cancelCompleted = () => {
 const showCompleted = () => {
     const container = document.querySelector(".completed-task-container");
     container.style.display = "flex";
-    const completedTask = JSON.parse(localStorage.getItem("Completed"));
+    const completedTask = JSON.parse(localStorage.getItem("Completed")).filter((val) => val);
     const itemLi = [];
     completedTask.map((val,index) => {
         itemLi.push(document.createElement("li"));
