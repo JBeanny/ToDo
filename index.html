@@ -15,6 +15,7 @@
     <script src="clearTask.js" defer></script>
     <script src="doTask.js" defer type="module"></script>
     <script src="action.js" defer></script>
+    <script src="showCompleted.js"></script>
   </head>
   <body class="main-container">
 
@@ -27,6 +28,15 @@
     <audio controls class="audio-timer" style="display: none" >
       <source src="./audio/mixkit-arcade-retro-run-sound-220.wav" type="audio/ogg">
     </audio>
+
+    <div class="completed-task-container">
+      <button class="completed-task-cancel" onclick="cancelCompleted()">
+        Cancel
+      </button>
+      <ul class="completed-task-ul">
+
+      </ul>
+    </div>
     
     <div class="task-ongoing">
         <h1 class="ongoing"></h1>
@@ -41,6 +51,9 @@
         </div>
         <button class="clear-all" onclick="clearStorage()">
           Clear all tasks
+        </button>
+        <button class="completed-task" onclick="showCompleted()">
+          Check completed tasks
         </button>
     </div>
     <div class="task-setting">
